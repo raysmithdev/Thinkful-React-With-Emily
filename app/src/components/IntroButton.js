@@ -1,14 +1,17 @@
-import React from 'react';
-import { Button } from 'react-bootstrap';
+import React from 'react'
+import { Button } from 'react-bootstrap'
+import { Link } from 'react-router'
 
 const IntroButton = (props) => (
     <p>
-      <Button
-        bsStyle={props.buttonColor}
-      >
-        Learn more
-      </Button>
+      <Link to={`/user/${props.name}/${props.bio}`}>
+        <Button
+          bsStyle={props.buttonColor}
+        >
+          Learn more
+        </Button>
+      </Link>
     </p>
 );
 
-export default IntroButton;
+export default IntroButton

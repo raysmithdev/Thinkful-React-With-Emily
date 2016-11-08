@@ -8,6 +8,8 @@ const Intro = (props) => (
     <p>{props.bio}</p>
     <IntroButton
       buttonColor={props.buttonColor}
+      name={props.name}
+      bio={props.bio}
     />
   </Jumbotron>
 );
