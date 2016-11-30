@@ -2,11 +2,11 @@ import React from 'react';
 import { Jumbotron } from 'react-bootstrap';
 import IntroButton from './IntroButton'
 
-const Intro = (props) => (
+const IntroView = (props) => (
   <Jumbotron>
     <h1>Hello, {props.name}!</h1>
     <p>{props.bio}</p>
-    <IntroButton
+    <IntroViewButton
       buttonColor={props.buttonColor}
       name={props.name}
       bio={props.bio}
@@ -14,4 +14,4 @@ const Intro = (props) => (
   </Jumbotron>
 );
 
-export default Intro;
+export default IntroView
