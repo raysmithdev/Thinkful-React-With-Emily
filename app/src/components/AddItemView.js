@@ -12,7 +12,7 @@ const AddItemView = ({ addItem }) => {
       inline
     >
     <FormGroup controlId="formInlineName">
-      <FormControl name="input" type="text" placeholder="Add an item..." />
+      <FormControl name="input" type="text" placeholder="Add an item..."  />
     </FormGroup>
     {' '}
     <Button type="submit">

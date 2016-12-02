@@ -8,9 +8,9 @@ export const addItem = (item) => {
   }
 }
 
-export const deleteItem = (id) => {
+export const toggleItem = (id) => {
   return {
-    type: 'DELETE_ITEM',
+    type: 'TOGGLE_ITEM',
     id
   }
 }

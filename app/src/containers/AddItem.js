@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import AddItemView from '../components/AddItemView'
-import { addItem } from '../actions'
+import { addItem, toggleItem } from '../actions'
 
 const mapDispatchToProps = (dispatch) => {
   return {

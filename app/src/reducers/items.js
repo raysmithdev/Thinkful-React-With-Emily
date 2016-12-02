@@ -4,7 +4,17 @@ const item = (state = {}, action) => {
       return {
         id: action.id,
         text: action.item,
+        completed: false,
         createdAt: Date.now()
+      }
+    case 'TOGGLE_ITEM':
+      if (state.id !== action.id) {
+        return state
+      }
+
+      return {
+        ...state,
+        completed: !state.completed
       }
     default:
       return state
@@ -19,6 +29,10 @@ const items = (state = [], action) => {
         ...state,
         item(undefined, action)
       ]
+    case 'TOGGLE_ITEM':
+      return state.map(i =>
+        item(i, action)
+      )
     case 'DELETE_ITEM':
       return [
         ...state.slice(0, action.id),
