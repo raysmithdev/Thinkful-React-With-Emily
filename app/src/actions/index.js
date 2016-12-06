@@ -1,16 +1,39 @@
-let id = 1
+import fetch from 'isomorphic-fetch'
 
-export const addItem = (item) => {
+const receiveData = (todos) => {
   return {
-    type: 'ADD_ITEM',
-    id: id++,
-    item
+    type: 'RECEIVE_DATA',
+    todos
   }
 }
 
-export const toggleItem = (id) => {
-  return {
-    type: 'TOGGLE_ITEM',
-    id
+export const addItem = (todo) =>  {
+  return dispatch => {
+    return fetch('http://localhost:8080/create-todo', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                name: todo
+              })
+            })
+            .then(response => response.json())
+            .then(todos => dispatch(receiveData(todos)) )
   }
 }
+
+// export const addItem = (item) => {
+//   return {
+//     type: 'ADD_ITEM',
+//     id: id++,
+//     item
+//   }
+// }
+//
+// export const toggleItem = (id) => {
+//   return {
+//     type: 'TOGGLE_ITEM',
+//     id
+//   }
+// }
